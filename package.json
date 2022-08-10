@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "name": "hierarchy-contributor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kidd93/hierarchy-contributor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kidd93/hierarchy-contributor/issues"
+  },
+  "homepage": "https://github.com/kidd93/hierarchy-contributor#readme",
+  "description": ""
+}
