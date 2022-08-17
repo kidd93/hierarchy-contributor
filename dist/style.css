@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    background-color: rgb(22, 133, 243);
+}
+
+hr {
+    background-color: black;
+    height: 2px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    border: 4px solid black;
+    border-radius: 8px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.card-head {
+    background-color: lightgray;
+    margin: 0;
+    padding: 5px;
+}
