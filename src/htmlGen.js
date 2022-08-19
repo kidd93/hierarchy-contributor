@@ -1,4 +1,3 @@
-
 let output = `
     
     <!DOCTYPE html>
@@ -19,6 +18,7 @@ let output = `
     <div>
         <main>
     `;
+
 
 
 const htmlGen = ({ Managers, Engineers, Interns }) => {
@@ -60,31 +60,22 @@ const htmlGen = ({ Managers, Engineers, Interns }) => {
         });
         output += `</div><h1>Engineers</h1><hr>`;
     };
+                        if (Interns.length) {
+                            output += `<div class="row">`;
+                            
+                            Interns.forEach(int => {
+                                output += `
+                                <div class="card">
+                                <div class="card-head">
+                                    <h2>${int.getName()}</h2>
+                                    <h4>Engineer</h4>
+                                </div>
+                                <p>ID: ${int.getId()} </p>
+                                <p>Email: <a href="mailto:${int.getEmail()}">${int.getEmail()}</a></p>
+                                <p>School: ${int.getSchool()}</p>
+                            </div>  
+            `;
+        });
+    };
 };
-
-
-
-
-
-`
-<div class="row">
-<div class="card">
-    <div class="card-head">
-        <h2>Jared</h2>
-        <h4>Intern</h4>
-    </div>
-    <p>ID:1</p>
-    <p>Email: <a href="">jared@test.com</a></p>
-    <p>School: EW </p>
-</div>
-</div>
-<h1>Interns</h1>
-<hr>
-</main>
-</div>
-
-</body>
-
-</html>
-
-`;
+output += `</div><h1>Interns</h1><hr></main></div></body></html>`;
