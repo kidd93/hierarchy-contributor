@@ -1,4 +1,4 @@
-# Heirarchy Contributor
+# Hierarchy Contributor
 
 ## Description
 Heirarchy Contributor generates a team profile based on the answers given by the user. 
