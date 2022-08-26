@@ -3,6 +3,7 @@ const { Manager, Engineer, Intern, questions } = require('./lib');
 const htmlGen = require('./src/htmlGen.js');
 const positions = { Managers:[], Engineers:[], Interns:[] }; 
 
+/*Init function takes the users input and pushes all of the data to the htmlGen file.*/
 const init = () => {
     
     prompt(questions).then(a =>{

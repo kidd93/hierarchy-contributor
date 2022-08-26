@@ -1,5 +1,6 @@
 const { writeFile } = require('fs');
 
+/*Output is used to generate the html template.*/
 let output = `    
     <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,7 @@ let output = `
     <div>
         <main>`;
 
+/*HtmlGen function plugs in the users input to help create an ideal html file.*/
 const htmlGen = ({ Managers, Engineers, Interns }) => {
 
     if (Managers.length) {
