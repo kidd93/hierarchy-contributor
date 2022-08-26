@@ -1,5 +1,6 @@
-let output = `
-    
+const { writeFile } = require('fs');
+
+let output = `    
     <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +17,7 @@ let output = `
         <h1 class="title">Welcome To My Team Profile!</h1>
     </header>
     <div>
-        <main>
-    `;
-
-
+        <main>`;
 
 const htmlGen = ({ Managers, Engineers, Interns }) => {
 
@@ -27,26 +25,24 @@ const htmlGen = ({ Managers, Engineers, Interns }) => {
         output += `<div class="row">`;
 
         Managers.forEach(mgr => {
-            output += `
-                        <div class="card">
+            output += `<div class="card">
                             <div class="card-head">
                                 <h2>${mgr.getName()}</h2>
                                 <h4>Manager</h4>
-                                </div>
+                            </div>
                                 <p>ID: ${mgr.getId()} </p>
                                 <p>Email: <a href="mailto:${mgr.getEmail()}">${mgr.getEmail()}</a></p>
                                 <p>Office number: ${mgr.getOfficeNumber()}</p>
-                                </div>
-                                `;
-                            });
-                            
-                            output += `</div><h1>Managers</h1><hr>`;
-                        };
-                        if (Engineers.length) {
-                            output += `<div class="row">`;
-                            
-                            Engineers.forEach(eng => {
-                                output += `
+                        </div>`});
+
+            output += `</div><h1>Managers</h1><hr>`;
+    };
+
+    if (Engineers.length) {
+        output += `<div class="row">`;
+
+        Engineers.forEach(eng => {
+            output += `
                                 <div class="card">
                                 <div class="card-head">
                                     <h2>${eng.getName()}</h2>
@@ -55,16 +51,15 @@ const htmlGen = ({ Managers, Engineers, Interns }) => {
                                 <p>ID: ${eng.getId()} </p>
                                 <p>Email: <a href="mailto:${eng.getEmail()}">${eng.getEmail()}</a></p>
                                 <p>Github: <a href="${eng.getGithub()}">${eng.getGithub()}</a></p>
-                            </div>  
-            `;
-        });
+                            </div>`});
         output += `</div><h1>Engineers</h1><hr>`;
     };
-                        if (Interns.length) {
-                            output += `<div class="row">`;
-                            
-                            Interns.forEach(int => {
-                                output += `
+
+    if (Interns.length) {
+        output += `<div class="row">`;
+
+        Interns.forEach(int => {
+            output += `
                                 <div class="card">
                                 <div class="card-head">
                                     <h2>${int.getName()}</h2>
@@ -73,9 +68,11 @@ const htmlGen = ({ Managers, Engineers, Interns }) => {
                                 <p>ID: ${int.getId()} </p>
                                 <p>Email: <a href="mailto:${int.getEmail()}">${int.getEmail()}</a></p>
                                 <p>School: ${int.getSchool()}</p>
-                            </div>  
-            `;
-        });
+                            </div>`});
     };
+    output += `</div><h1>Interns</h1><hr></main></div></body></html>`;
+
+    writeFile('./dist/TeamBuilder.html', output, ()=> console.log('TeamBuilder.html was created...'));
 };
-output += `</div><h1>Interns</h1><hr></main></div></body></html>`;
+
+module.exports = htmlGen;
